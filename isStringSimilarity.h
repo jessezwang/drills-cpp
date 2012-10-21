@@ -1,21 +1,18 @@
 //============================================================================
-// Name        : main.cpp
+// Name        : isStringSimilarity.h
 // Author      : Zhe Wang
 // Version     :
 // Copyright   : GPL 3.0
-// Description : Entrance to all the other subroutines
+// Description : String Similarity. www.interviewstreet.com/challenges/#4
 //============================================================================
 
-#include "isStringSimilarity.h"
+#include <string>
+#include <iostream>
 #include <fstream>
 using namespace std;
 
-int main(int argc, char *argv[]){
-
-	ifstream file("input00.txt");
-	cin.rdbuf(file.rdbuf());
-
-	StringSimilarity ss;
-	ss.run();
-	return 0;
-}
+class StringSimilarity{
+	int numberOfLCP(string s);
+public:
+	void run();
+};

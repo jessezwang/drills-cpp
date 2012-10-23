@@ -1,5 +1,5 @@
 //============================================================================
-// Name        : isStringSimilarity.h
+// Name        : isStringSimilarity.hpp
 // Author      : Zhe Wang
 // Version     :
 // Copyright   : GPL 3.0

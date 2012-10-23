@@ -6,34 +6,31 @@
 // Description : String Similarity. www.interviewstreet.com/challenges/#4
 //============================================================================
 
-
-#include "isStringSimilarity.h"
-#include <queue>
+#include "isStringSimilarity.hpp"
 using namespace std;
 
 int StringSimilarity::numberOfLCP(string s){
-	int ret=0, loop=0;
+
 	int len=s.length();
-	queue<int> ind;
+	int z[len];
+	int i, ret=0;
+	int left=0, right=0;
 	for (int i=1; i<len; i++){
-		if (s[i]==s[loop]){
-			ret++;
-			ind.push(i);
-		}
-	}
-	loop++;
-	while(loop<len && !ind.empty()){
-		int sz = ind.size();
-		for (int i=0; i<sz; i++){
-			if ( ind.front()+1<len && s[ind.front()+1]==s[loop] ){
-				ret++;
-				ind.push(ind.front()+1);
+		if (i>right) {
+			left=right=i;
+			while (i<len && s[right]==s[right-left]) right++;
+			z[i]=right---left;
+		} else {
+			if (i+z[i-left]<=right) z[i]=z[i-left];
+			else {
+				left=i;
+				while (right<len && s[right]==s[right-left]) right++;
+				z[i]=right---left;
 			}
-			ind.pop();
 		}
-		loop++;
 	}
-	return ret+len;
+	for (int i=1; i<len; i++) ret+=z[i];
+	return ret;
 };
 
 void StringSimilarity::run(){

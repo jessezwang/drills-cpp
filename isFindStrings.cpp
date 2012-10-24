@@ -9,7 +9,7 @@
 #include <algorithm>
 using namespace std;
 
-void FindStrings::findSubstring(int k){
+void FindStrings::findSubstring(unsigned k){
 	if (k<=sorted_substrings.size()){
 		cout<<sorted_substrings[k-1]<<endl;
 	} else
@@ -17,31 +17,24 @@ void FindStrings::findSubstring(int k){
 }
 
 void FindStrings::run(){
-	int n, q, k;
+	int n, q;
+	unsigned k;
 	string s;
 	cin>>n;
 	for (int i=0; i<n; i++){
 		cin>>s;
 		for(unsigned sz=1; sz<s.length()+1; sz++)
-			for (unsigned beg=0; beg<s.length()-sz+1; beg++){
+			for (unsigned beg=0; beg<s.length()-sz+1; beg++)
 				substrings.insert(s.substr(beg,sz));
-//				char *cstr = new char [sz+1];
-//				cstr = strcpy(cstr, s.substr(beg,sz).c_str());
-//				substrings.insert(cstr);
-			}
 	}
 	sorted_substrings.assign(substrings.begin(),substrings.end());
 	sort(sorted_substrings.begin(), sorted_substrings.end());
 	cin>>q;
 	cout<<"q="<<q<<endl;
-	for (vector<string>::iterator it=sorted_substrings.begin(); it!=sorted_substrings.end(); it++)
-		cout<<*it<<endl;
 	for (int j=0; j<q; j++) {
 		cin>>k;
 		findSubstring(k);
 	}
-
-
 }
 
 

@@ -16,6 +16,10 @@ void FindStrings::findSubstring(unsigned k){
 		cout<<"INVALID"<<endl;
 }
 
+void FindStrings::sortSubstring(){
+	sorted_substrings
+}
+
 void FindStrings::run(){
 	int n, q;
 	unsigned k;
@@ -28,9 +32,8 @@ void FindStrings::run(){
 				substrings.insert(s.substr(beg,sz));
 	}
 	sorted_substrings.assign(substrings.begin(),substrings.end());
-	sort(sorted_substrings.begin(), sorted_substrings.end());
 	cin>>q;
-	cout<<"q="<<q<<endl;
+	sortSubstrings();
 	for (int j=0; j<q; j++) {
 		cin>>k;
 		findSubstring(k);

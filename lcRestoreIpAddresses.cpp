@@ -11,7 +11,7 @@ using namespace std;
 vector<string> RestoreIpAddresses::restoreIpAddresses(string s){
 	vector<string> ret;
 
-
+	return ret;
 }
 
 void RestoreIpAddresses::run(){

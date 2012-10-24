@@ -13,7 +13,7 @@ int StringSimilarity::numberOfLCP(string s){
 
 	int len=s.length();
 	int z[len];
-	int i, ret=0;
+	int ret=0;
 	int left=0, right=0;
 	for (int i=1; i<len; i++){
 		if (i>right) {

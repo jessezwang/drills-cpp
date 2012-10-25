@@ -7,7 +7,7 @@
 //============================================================================
 
 #include "isFindStrings.hpp"
-#include "lcPalindromeNumber.hpp"
+#include "lcPermutationSequence.hpp"
 #include <fstream>
 #include <iostream>
 #include <tr1/unordered_set>
@@ -18,7 +18,7 @@ int main(int argc, char *argv[]){
 //	cin.rdbuf(file.rdbuf());
 //	FindStrings fs;
 //	fs.run();
-	PalindromeNumber pn;
-	cout<<pn.isPalindrome(2147447412);
+	PermutationSequence ps;
+	cout<<ps.kthPermutation(3,2);
 	return 0;
 }

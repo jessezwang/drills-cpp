@@ -17,7 +17,8 @@ using namespace std;
 class FindStrings{
 	tr1::unordered_set<string> substrings;
 	vector<string> sorted_substrings;
-	void sortSubstrings();
+	vector<string> aux;
+	void sortSubstrings(unsigned low, unsigned high, unsigned d);
 	void findSubstring(unsigned k);
 public:
 	void run();

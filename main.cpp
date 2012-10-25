@@ -15,7 +15,6 @@ using namespace std;
 int main(int argc, char *argv[]){
 	ifstream file("input00.txt");
 	cin.rdbuf(file.rdbuf());
-
 	FindStrings fs;
 	fs.run();
 	return 0;
